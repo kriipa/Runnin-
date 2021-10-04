@@ -83,6 +83,17 @@ def main_window():
     #     Submit_button = Button(root, text="Submit", font=('Cambria', 25), activebackground="#471323", fg="#471323",
     #                                 borderwidth=0, command=submit)
     #     Submit_button.place(x=230, y=350, width=195)
+        def horizontal_collision(self):
+            player = self.player.sprite
+
+            player.rect.x += player.direction.x * player.vel
+
+            for sprite in self.tiles.sprites():
+                if sprite.rect.colliderect(player.rect):
+                    if player.direction.x < 0:
+                        player.rect.left = sprite.rect.right  # moving player according to collision
+                    elif player.direction.x > 0:
+                        player.rect.right = sprite.rect.left
     LoginForm()
     root.mainloop()
 

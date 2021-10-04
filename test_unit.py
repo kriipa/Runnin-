@@ -19,3 +19,6 @@ class Test(TestCase):
 class Test(TestCase):
     def test_login_form(self):
         self.assertTrue(35,5)
+class Test(TestCase):
+    def test_horizontal_collision(self):
+        self.assertTrue(1,0)
